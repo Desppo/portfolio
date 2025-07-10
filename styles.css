@@ -25,3 +25,45 @@ a {
   color: #007acc;
   text-decoration: none;
 }
+
+/* --- Estilos para los proyectos --- */
+
+.proyecto {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex; /* Usamos flexbox para alinear el texto junto a la imagen */
+  align-items: center; /* Centra verticalmente el contenido */
+  gap: 20px; /* Espacio entre la imagen y el texto */
+}
+
+.proyecto h3 {
+  color: #0056b3;
+  margin-top: 0;
+}
+
+.proyecto p {
+  flex-grow: 1; /* Permite que el párrafo ocupe el espacio restante */
+}
+
+/* Estilo específico para el proyecto "Hábitos" */
+.proyecto.habitos {
+  background-image: url('habitos.png'); 
+  background-size: 150px auto; 
+  background-repeat: no-repeat;
+  background-position: right 20px center; /* Posiciona la imagen a la derecha y centrada verticalmente, con 20px de padding */
+  padding-right: 170px; /* Asegura que el texto no se superponga con la imagen */
+}
+
+/* Ejemplo para un segundo proyecto */
+/*
+.proyecto.otro-proyecto {
+  background-image: url('proyecto2.png');
+  background-size: 150px auto;
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  padding-right: 170px;
+}
+*/
