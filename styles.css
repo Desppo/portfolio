@@ -1,249 +1,197 @@
-/* --- Variables CSS (Custom Properties) --- */
-/* Estas variables te permiten cambiar colores, fuentes, etc., en un solo lugar y aplicarlos globalmente. */
+/* --- Variables CSS --- */
 :root {
-  --color-primary: #3498db; /* Un azul vibrante para elementos principales */
-  --color-secondary: #2c3e50; /* Un gris oscuro para texto principal y fondos */
-  --color-accent: #e74c3c; /* Un rojo para destacar o advertir */
-  --color-text-light: #ecf0f1; /* Texto claro para fondos oscuros */
-  --color-text-dark: #34495e; /* Texto oscuro para fondos claros */
-  --color-background-light: #ffffff; /* Fondo claro */
-  --color-background-dark: #2c3e50; /* Fondo oscuro */
-  --font-family-headings: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --font-family-body: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-  --spacing-unit: 1.5rem; /* Unidad base para márgenes y paddings */
-  --border-radius: 8px;
-  --transition-speed: 0.3s;
+  /* Colores */
+  --color-primario: #3498db; /* Un azul vibrante para elementos principales */
+  --color-secundario: #2c3e50; /* Un azul oscuro para textos y fondos secundarios */
+  --color-fondo: #ecf0f1; /* Un gris claro para el fondo general */
+  --color-texto-claro: #fcfcfc; /* Blanco para texto sobre fondos oscuros */
+  --color-texto-oscuro: #333; /* Gris oscuro para texto sobre fondos claros */
+  --color-acento: #e74c3c; /* Un rojo para destacar acciones o enlaces */
+
+  /* Fuentes */
+  --fuente-principal: 'Arial', sans-serif;
+  --fuente-secundaria: 'Verdana', sans-serif;
+
+  /* Espaciado */
+  --espaciado-pequeno: 10px;
+  --espaciado-medio: 20px;
+  --espaciado-grande: 40px;
+
+  /* Sombras */
+  --sombra-suave: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* --- Base Styles & Resets --- */
-/* Resetea estilos por defecto del navegador para una base consistente. */
-*, *::before, *::after {
-  box-sizing: border-box; /* Facilita el cálculo de anchos y alturas */
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en enlaces internos */
-  font-size: 16px; /* Define el tamaño de fuente base */
-}
-
+/* --- Estilos Generales --- */
 body {
-  font-family: var(--font-family-body);
+  font-family: var(--fuente-principal);
   line-height: 1.6;
-  color: var(--color-text-dark);
-  background-color: var(--color-background-light);
   margin: 0;
   padding: 0;
+  background-color: var(--color-fondo);
+  color: var(--color-texto-oscuro);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Asegura que el body ocupe al menos el alto de la ventana */
+}
+
+h1, h2, h3 {
+  color: var(--color-secundario);
+  margin-bottom: var(--espaciado-pequeno);
 }
 
 a {
-  color: var(--color-primary);
-  text-decoration: none; /* Elimina el subrayado por defecto en los enlaces */
-  transition: color var(--transition-speed) ease;
+  color: var(--color-primario);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--color-accent);
-  text-decoration: underline; /* Añade subrayado al pasar el ratón */
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family-headings);
-  color: var(--color-secondary);
-  margin-bottom: calc(var(--spacing-unit) / 2);
-}
-
-h1 {
-  font-size: 2.8rem;
-  color: var(--color-primary);
-}
-
-h2 {
-  font-size: 2.2rem;
-  border-bottom: 2px solid var(--color-primary);
-  padding-bottom: 0.5rem;
-  margin-bottom: var(--spacing-unit);
-}
-
-h3 {
-  font-size: 1.8rem;
+  color: var(--color-acento);
 }
 
 p {
-  margin-bottom: var(--spacing-unit);
+  margin-bottom: var(--espaciado-medio);
 }
 
-img {
-  max-width: 100%; /* Asegura que las imágenes no se desborden de su contenedor */
-  height: auto; /* Mantiene la proporción de la imagen */
-  display: block; /* Elimina el espacio extra debajo de las imágenes */
-}
-
-/* --- Layout Base --- */
-/* Estilos para el contenedor principal y secciones. */
+/* --- Encabezado (Header) --- */
 header {
-  background-color: var(--color-secondary);
-  color: var(--color-text-light);
+  background-color: var(--color-secundario);
+  color: var(--color-texto-claro);
+  padding: var(--espaciado-grande) var(--espaciado-medio);
   text-align: center;
-  padding: var(--spacing-unit) 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--sombra-suave);
 }
 
 header h1 {
-  color: var(--color-text-light);
-  margin-bottom: 0.5rem;
+  color: var(--color-texto-claro);
+  margin-bottom: var(--espaciado-pequeno);
+  font-size: 2.5em; /* Ajusta el tamaño para que sea prominente */
 }
 
 header p {
-  font-size: 1.2rem;
-  margin-bottom: 0;
+  font-size: 1.2em;
+  opacity: 0.9;
 }
 
+/* --- Secciones Generales --- */
 section {
-  padding: var(--spacing-unit) 5%; /* Padding lateral responsive */
-  max-width: 1200px; /* Ancho máximo para el contenido principal */
-  margin: 0 auto; /* Centra las secciones */
+  padding: var(--espaciado-grande) var(--espaciado-medio);
+  margin-bottom: var(--espaciado-medio);
+  background-color: var(--color-texto-claro);
+  box-shadow: var(--sombra-suave);
+  border-radius: 8px; /* Bordes ligeramente redondeados */
+  max-width: 960px; /* Ancho máximo para el contenido principal */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-section:nth-of-type(even) { /* Estilo alterno para secciones, mejora la legibilidad */
-  background-color: #f8f8f8; /* Un gris muy claro */
-}
-
-/* --- Specific Section Styles --- */
+/* --- Sección Sobre Mí --- */
 #sobre-mi {
-  padding-top: var(--spacing-unit);
-  padding-bottom: var(--spacing-unit);
-  text-align: justify;
+  text-align: justify; /* Justifica el texto para una mejor lectura */
 }
 
-#sobre-mi a {
-  display: inline-block;
-  background-color: var(--color-primary);
-  color: var(--color-text-light);
-  padding: 0.8rem 1.5rem;
-  border-radius: var(--border-radius);
-  margin-top: var(--spacing-unit);
-  font-weight: bold;
-  transition: background-color var(--transition-speed) ease;
-}
-
-#sobre-mi a:hover {
-  background-color: var(--color-accent);
-  text-decoration: none;
-}
-
+/* --- Sección Proyectos --- */
 #proyectos {
-  padding-top: var(--spacing-unit);
-  padding-bottom: var(--spacing-unit);
+  display: grid;
+  /* Configuración inicial para una columna, adaptable a más */
+  grid-template-columns: 1fr;
+  gap: var(--espaciado-grande); /* Espacio entre proyectos */
 }
 
 .proyecto {
-  background-color: var(--color-background-light);
-  border: 1px solid #ddd;
-  border-radius: var(--border-radius);
-  padding: var(--spacing-unit);
-  margin-bottom: var(--spacing-unit);
+  background-color: var(--color-fondo);
+  padding: var(--espaciado-medio);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   display: flex;
-  flex-direction: column; /* Apila los elementos en pantallas pequeñas */
-  gap: var(--spacing-unit);
-  align-items: flex-start; /* Alinea los elementos al inicio */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
+  flex-direction: column;
+  align-items: center; /* Centra los elementos dentro del proyecto */
+  text-align: center;
+  transition: transform 0.3s ease; /* Efecto hover */
 }
 
 .proyecto:hover {
-  transform: translateY(-5px); /* Efecto sutil al pasar el ratón */
+  transform: translateY(-5px); /* Pequeño levantamiento al pasar el ratón */
 }
 
 .proyecto img {
-  width: 150px; /* Tamaño fijo para las imágenes de proyecto */
-  height: 150px;
-  object-fit: contain; /* Asegura que la imagen completa sea visible */
-  border: 1px solid #eee;
-  border-radius: var(--border-radius);
-  flex-shrink: 0; /* Evita que la imagen se encoja */
+  max-width: 100%; /* Asegura que la imagen no se desborde */
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: var(--espaciado-pequeno);
 }
 
 .proyecto h3 {
-  color: var(--color-primary);
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+  color: var(--color-primario);
+  margin-bottom: var(--espaciado-pequeno);
 }
 
-.proyecto p {
-  margin-bottom: 0;
+.proyecto a {
+  display: inline-block; /* Permite aplicar padding y margin */
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
+  padding: var(--espaciado-pequeno) var(--espaciado-medio);
+  border-radius: 5px;
+  margin-top: var(--espaciado-pequeno);
+  transition: background-color 0.3s ease;
 }
 
-#contacto {
-  text-align: center;
-  padding-top: var(--spacing-unit);
-  padding-bottom: var(--spacing-unit);
-  background-color: var(--color-secondary);
-  color: var(--color-text-light);
+.proyecto a:hover {
+  background-color: var(--color-acento);
 }
 
-#contacto h2 {
-  color: var(--color-text-light);
-}
-
+/* --- Sección Contacto --- */
 #contacto p {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.1em;
+  margin-bottom: var(--espaciado-pequeno);
 }
 
 #contacto a {
-  color: var(--color-primary);
   font-weight: bold;
 }
 
-#contacto a:hover {
-  color: var(--color-accent);
-  text-decoration: underline;
-}
-
-/* --- Responsive Design (Media Queries) --- */
-/* Adapta el diseño a diferentes tamaños de pantalla. */
+/* --- Media Queries para Responsividad y Escalabilidad --- */
 @media (min-width: 768px) {
-  h1 {
-    font-size: 3.5rem;
+  /* Para pantallas medianas y grandes */
+  section {
+    padding: var(--espaciado-grande); /* Más padding en pantallas grandes */
   }
 
-  h2 {
-    font-size: 2.5rem;
-  }
-
-  .proyecto {
-    flex-direction: row; /* En pantallas más grandes, la imagen y el texto se colocan lado a lado */
-    align-items: center;
-  }
-
-  .proyecto.habitos img { /* Estilo específico si necesitas para proyectos individuales */
-      /* Ejemplo: Si la imagen del proyecto habitos necesita un tamaño diferente */
-  }
-
-  .proyecto > div { /* Contenedor para el texto del proyecto */
-    flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
-  }
-
-  #sobre-mi {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center; /* Centra el texto en pantallas grandes */
-  }
-
-  #sobre-mi p {
-    max-width: 800px; /* Limita el ancho del párrafo para mejor legibilidad */
+  #proyectos {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 2 o más columnas */
   }
 }
 
 @media (min-width: 1024px) {
-  h1 {
-    font-size: 4rem;
+  /* Para pantallas muy grandes */
+  header {
+    padding: var(--espaciado-grande) 0; /* Centra el header */
   }
 
-  h2 {
-    font-size: 3rem;
+  section {
+    padding: var(--espaciado-grande) var(--espaciado-grande);
   }
 }
+
+/* --- Clases de Utilidad (para escalabilidad) --- */
+
+/* Clase para centrar cualquier elemento de bloque */
+.text-center {
+  text-align: center;
+}
+
+/* Clase para ocultar elementos visualmente pero mantenerlos para lectores de pantalla */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Puedes añadir más clases de utilidad según necesites, por ejemplo: */
+/* .margin-top-large { margin-top: var(--espaciado-grande); } */
+/* .padding-bottom-small { padding-bottom: var(--espaciado-pequeno); } */

@@ -1,0 +1,249 @@
+/* --- Variables CSS (Custom Properties) --- */
+/* Estas variables te permiten cambiar colores, fuentes, etc., en un solo lugar y aplicarlos globalmente. */
+:root {
+  --color-primary: #3498db; /* Un azul vibrante para elementos principales */
+  --color-secondary: #2c3e50; /* Un gris oscuro para texto principal y fondos */
+  --color-accent: #e74c3c; /* Un rojo para destacar o advertir */
+  --color-text-light: #ecf0f1; /* Texto claro para fondos oscuros */
+  --color-text-dark: #34495e; /* Texto oscuro para fondos claros */
+  --color-background-light: #ffffff; /* Fondo claro */
+  --color-background-dark: #2c3e50; /* Fondo oscuro */
+  --font-family-headings: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-family-body: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  --spacing-unit: 1.5rem; /* Unidad base para márgenes y paddings */
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+}
+
+/* --- Base Styles & Resets --- */
+/* Resetea estilos por defecto del navegador para una base consistente. */
+*, *::before, *::after {
+  box-sizing: border-box; /* Facilita el cálculo de anchos y alturas */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en enlaces internos */
+  font-size: 16px; /* Define el tamaño de fuente base */
+}
+
+body {
+  font-family: var(--font-family-body);
+  line-height: 1.6;
+  color: var(--color-text-dark);
+  background-color: var(--color-background-light);
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none; /* Elimina el subrayado por defecto en los enlaces */
+  transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+  color: var(--color-accent);
+  text-decoration: underline; /* Añade subrayado al pasar el ratón */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-headings);
+  color: var(--color-secondary);
+  margin-bottom: calc(var(--spacing-unit) / 2);
+}
+
+h1 {
+  font-size: 2.8rem;
+  color: var(--color-primary);
+}
+
+h2 {
+  font-size: 2.2rem;
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 0.5rem;
+  margin-bottom: var(--spacing-unit);
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+p {
+  margin-bottom: var(--spacing-unit);
+}
+
+img {
+  max-width: 100%; /* Asegura que las imágenes no se desborden de su contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  display: block; /* Elimina el espacio extra debajo de las imágenes */
+}
+
+/* --- Layout Base --- */
+/* Estilos para el contenedor principal y secciones. */
+header {
+  background-color: var(--color-secondary);
+  color: var(--color-text-light);
+  text-align: center;
+  padding: var(--spacing-unit) 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  color: var(--color-text-light);
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+section {
+  padding: var(--spacing-unit) 5%; /* Padding lateral responsive */
+  max-width: 1200px; /* Ancho máximo para el contenido principal */
+  margin: 0 auto; /* Centra las secciones */
+}
+
+section:nth-of-type(even) { /* Estilo alterno para secciones, mejora la legibilidad */
+  background-color: #f8f8f8; /* Un gris muy claro */
+}
+
+/* --- Specific Section Styles --- */
+#sobre-mi {
+  padding-top: var(--spacing-unit);
+  padding-bottom: var(--spacing-unit);
+  text-align: justify;
+}
+
+#sobre-mi a {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--border-radius);
+  margin-top: var(--spacing-unit);
+  font-weight: bold;
+  transition: background-color var(--transition-speed) ease;
+}
+
+#sobre-mi a:hover {
+  background-color: var(--color-accent);
+  text-decoration: none;
+}
+
+#proyectos {
+  padding-top: var(--spacing-unit);
+  padding-bottom: var(--spacing-unit);
+}
+
+.proyecto {
+  background-color: var(--color-background-light);
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  padding: var(--spacing-unit);
+  margin-bottom: var(--spacing-unit);
+  display: flex;
+  flex-direction: column; /* Apila los elementos en pantallas pequeñas */
+  gap: var(--spacing-unit);
+  align-items: flex-start; /* Alinea los elementos al inicio */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.proyecto:hover {
+  transform: translateY(-5px); /* Efecto sutil al pasar el ratón */
+}
+
+.proyecto img {
+  width: 150px; /* Tamaño fijo para las imágenes de proyecto */
+  height: 150px;
+  object-fit: contain; /* Asegura que la imagen completa sea visible */
+  border: 1px solid #eee;
+  border-radius: var(--border-radius);
+  flex-shrink: 0; /* Evita que la imagen se encoja */
+}
+
+.proyecto h3 {
+  color: var(--color-primary);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.proyecto p {
+  margin-bottom: 0;
+}
+
+#contacto {
+  text-align: center;
+  padding-top: var(--spacing-unit);
+  padding-bottom: var(--spacing-unit);
+  background-color: var(--color-secondary);
+  color: var(--color-text-light);
+}
+
+#contacto h2 {
+  color: var(--color-text-light);
+}
+
+#contacto p {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+#contacto a {
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+#contacto a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* --- Responsive Design (Media Queries) --- */
+/* Adapta el diseño a diferentes tamaños de pantalla. */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .proyecto {
+    flex-direction: row; /* En pantallas más grandes, la imagen y el texto se colocan lado a lado */
+    align-items: center;
+  }
+
+  .proyecto.habitos img { /* Estilo específico si necesitas para proyectos individuales */
+      /* Ejemplo: Si la imagen del proyecto habitos necesita un tamaño diferente */
+  }
+
+  .proyecto > div { /* Contenedor para el texto del proyecto */
+    flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
+  }
+
+  #sobre-mi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Centra el texto en pantallas grandes */
+  }
+
+  #sobre-mi p {
+    max-width: 800px; /* Limita el ancho del párrafo para mejor legibilidad */
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+}
