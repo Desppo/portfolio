@@ -127,17 +127,27 @@ section {
 }
 
 .proyecto a {
-  display: inline-block; /* Permite aplicar padding y margin */
-  background-color: var(--color-primario);
-  color: var(--color-texto-claro);
-  padding: var(--espaciado-pequeno) var(--espaciado-medio);
-  border-radius: 5px;
+  display: inline-block; /* Crucial para que el padding y los márgenes funcionen */
+  background-color: var(--color-primario); /* Color de fondo del botón */
+  color: var(--color-texto-claro); /* Color del texto del botón */
+  padding: 12px 25px; /* Más relleno para un aspecto de botón */
+  border-radius: 8px; /* Bordes más redondeados */
   margin-top: var(--espaciado-pequeno);
-  transition: background-color 0.3s ease;
+  text-decoration: none; /* Eliminar el subrayado del enlace */
+  font-weight: bold; /* Hacer el texto más llamativo */
+  font-size: 1em; /* Ajustar el tamaño de la fuente si es necesario */
+  cursor: pointer; /* Cambiar el cursor a una mano al pasar por encima */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones para el hover */
 }
 
 .proyecto a:hover {
-  background-color: var(--color-acento);
+  background-color: var(--color-acento); /* Cambio de color al pasar el ratón */
+  transform: translateY(-2px); /* Pequeño levantamiento para un efecto más interactivo */
+}
+
+.proyecto a:active {
+  transform: translateY(0); /* Vuelve a la posición normal al hacer clic */
+  background-color: darken(var(--color-acento), 10%); /* Oscurecer un poco al hacer clic */
 }
 
 /* --- Sección Contacto --- */
