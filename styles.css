@@ -220,6 +220,44 @@ section {
   border: 0;
 }
 
-/* Puedes añadir más clases de utilidad según necesites, por ejemplo: */
-/* .margin-top-large { margin-top: var(--espaciado-grande); } */
-/* .padding-bottom-small { padding-bottom: var(--espaciado-pequeno); } */
+/* --- Pie de Página (Footer) --- */
+footer {
+  background-color: var(--color-secundario); /* Fondo oscuro como el header */
+  color: var(--color-texto-claro); /* Texto claro para contraste */
+  padding: var(--espaciado-grande) var(--espaciado-medio); /* Relleno generoso */
+  text-align: center; /* Centra el contenido */
+  box-shadow: var(--sombra-suave); /* Sombra suave para profundidad */
+  margin-top: var(--espaciado-grande); /* Espacio superior para separarlo del contenido */
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+/* Estilos específicos para los elementos dentro del footer */
+footer h2 {
+  color: var(--color-texto-claro); /* Título del footer en color claro */
+  margin-bottom: var(--espaciado-pequeno); /* Espaciado debajo del título */
+}
+
+footer p {
+  font-size: 1.1em; /* Tamaño de fuente ligeramente más grande para los párrafos */
+  margin-bottom: var(--espaciado-pequeno); /* Reduce el margen inferior para los párrafos de contacto */
+}
+
+footer a {
+  color: var(--color-primario); /* Enlaces con el color primario */
+  font-weight: bold; /* Texto de enlace en negrita */
+}
+
+footer a:hover {
+  color: var(--color-acento); /* Color de acento al pasar el ratón */
+  text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+footer #contacto {
+  max-width: 960px; /* Limita el ancho del contenido interno del footer */
+  margin-left: auto;
+  margin-right: auto; /* Centra la sección interna */
+  padding: 0; /* Elimina padding adicional que podría tener section */
+  background: none; /* Elimina el fondo de la sección si el footer ya lo provee */
+  box-shadow: none; /* Elimina la sombra de la sección */
+  border-radius: 0; /* Elimina los bordes redondeados */
+}
