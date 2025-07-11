@@ -151,13 +151,31 @@ section {
 }
 
 /* --- Sección Contacto --- */
+#contacto {
+  text-align: center;
+  padding-top: var(--spacing-unit);
+  padding-bottom: var(--spacing-unit);
+  background-color: var(--color-secondary);
+  color: var(--color-text-light);
+}
+
+#contacto h2 {
+  color: var(--color-text-light);
+}
+
 #contacto p {
-  font-size: 1.1em;
-  margin-bottom: var(--espaciado-pequeno);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
 }
 
 #contacto a {
+  color: var(--color-primary);
   font-weight: bold;
+}
+
+#contacto a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
 }
 
 /* --- Media Queries para Responsividad y Escalabilidad --- */
