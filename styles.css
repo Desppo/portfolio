@@ -1,27 +1,18 @@
-/* --- Variables CSS --- */
 :root {
-  /* Colores */
-  --color-primario: #3498db; /* Un azul vibrante para elementos principales */
-  --color-secundario: #2c3e50; /* Un azul oscuro para textos y fondos secundarios */
-  --color-fondo: #ecf0f1; /* Un gris claro para el fondo general */
-  --color-texto-claro: #fcfcfc; /* Blanco para texto sobre fondos oscuros */
-  --color-texto-oscuro: #333; /* Gris oscuro para texto sobre fondos claros */
-  --color-acento: #e74c3c; /* Un rojo para destacar acciones o enlaces */
-
-  /* Fuentes */
+  --color-primario: #3498db;
+  --color-secundario: #2c3e50;
+  --color-fondo: #ecf0f1;
+  --color-texto-claro: #fcfcfc;
+  --color-texto-oscuro: #333;
+  --color-acento: #e74c3c;
   --fuente-principal: 'Arial', sans-serif;
   --fuente-secundaria: 'Verdana', sans-serif;
-
-  /* Espaciado */
   --espaciado-pequeno: 10px;
   --espaciado-medio: 20px;
   --espaciado-grande: 40px;
-
-  /* Sombras */
   --sombra-suave: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* --- Estilos Generales --- */
 body {
   font-family: var(--fuente-principal);
   line-height: 1.6;
@@ -31,7 +22,7 @@ body {
   color: var(--color-texto-oscuro);
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Asegura que el body ocupe al menos el alto de la ventana */
+  min-height: 100vh;
 }
 
 h1, h2, h3 {
@@ -53,7 +44,6 @@ p {
   margin-bottom: var(--espaciado-medio);
 }
 
-/* --- Encabezado (Header) --- */
 header {
   background-color: var(--color-secundario);
   color: var(--color-texto-claro);
@@ -65,7 +55,7 @@ header {
 header h1 {
   color: var(--color-texto-claro);
   margin-bottom: var(--espaciado-pequeno);
-  font-size: 2.5em; /* Ajusta el tamaño para que sea prominente */
+  font-size: 2.5em;
 }
 
 header p {
@@ -73,29 +63,25 @@ header p {
   opacity: 0.9;
 }
 
-/* --- Secciones Generales --- */
 section {
   padding: var(--espaciado-grande) var(--espaciado-medio);
   margin-bottom: var(--espaciado-medio);
   background-color: var(--color-texto-claro);
   box-shadow: var(--sombra-suave);
-  border-radius: 8px; /* Bordes ligeramente redondeados */
-  max-width: 960px; /* Ancho máximo para el contenido principal */
+  border-radius: 8px;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* --- Sección Sobre Mí --- */
 #sobre-mi {
-  text-align: justify; /* Justifica el texto para una mejor lectura */
+  text-align: justify;
 }
 
-/* --- Sección Proyectos --- */
 #proyectos {
   display: grid;
-  /* Configuración inicial para una columna, adaptable a más */
   grid-template-columns: 1fr;
-  gap: var(--espaciado-grande); /* Espacio entre proyectos */
+  gap: var(--espaciado-grande);
 }
 
 .proyecto {
@@ -105,17 +91,17 @@ section {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra los elementos dentro del proyecto */
+  align-items: center;
   text-align: center;
-  transition: transform 0.3s ease; /* Efecto hover */
+  transition: transform 0.3s ease;
 }
 
 .proyecto:hover {
-  transform: translateY(-5px); /* Pequeño levantamiento al pasar el ratón */
+  transform: translateY(-5px);
 }
 
 .proyecto img {
-  max-width: 100%; /* Asegura que la imagen no se desborde */
+  max-width: 100%;
   height: auto;
   border-radius: 4px;
   margin-bottom: var(--espaciado-pequeno);
@@ -127,88 +113,32 @@ section {
 }
 
 .proyecto a {
-  display: inline-block; /* Crucial para que el padding y los márgenes funcionen */
-  background-color: var(--color-primario); /* Color de fondo del botón */
-  color: var(--color-texto-claro); /* Color del texto del botón */
-  padding: 12px 25px; /* Más relleno para un aspecto de botón */
-  border-radius: 8px; /* Bordes más redondeados */
+  display: inline-block;
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
+  padding: 12px 25px;
+  border-radius: 8px;
   margin-top: var(--espaciado-pequeno);
-  text-decoration: none; /* Eliminar el subrayado del enlace */
-  font-weight: bold; /* Hacer el texto más llamativo */
-  font-size: 1em; /* Ajustar el tamaño de la fuente si es necesario */
-  cursor: pointer; /* Cambiar el cursor a una mano al pasar por encima */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones para el hover */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .proyecto a:hover {
-  background-color: var(--color-acento); /* Cambio de color al pasar el ratón */
-  transform: translateY(-2px); /* Pequeño levantamiento para un efecto más interactivo */
+  background-color: var(--color-acento);
+  transform: translateY(-2px);
 }
 
 .proyecto a:active {
-  transform: translateY(0); /* Vuelve a la posición normal al hacer clic */
-  background-color: darken(var(--color-acento), 10%); /* Oscurecer un poco al hacer clic */
+  transform: translateY(0);
 }
 
-/* --- Sección Contacto --- */
-#contacto {
-  text-align: center;
-  padding-top: var(--spacing-unit);
-  padding-bottom: var(--spacing-unit);
-  background-color: var(--color-secondary);
-  color: var(--color-text-light);
-}
-
-#contacto h2 {
-  color: var(--color-text-light);
-}
-
-#contacto p {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
-#contacto a {
-  color: var(--color-primary);
-  font-weight: bold;
-}
-
-#contacto a:hover {
-  color: var(--color-accent);
-  text-decoration: underline;
-}
-
-/* --- Media Queries para Responsividad y Escalabilidad --- */
-@media (min-width: 768px) {
-  /* Para pantallas medianas y grandes */
-  section {
-    padding: var(--espaciado-grande); /* Más padding en pantallas grandes */
-  }
-
-  #proyectos {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 2 o más columnas */
-  }
-}
-
-@media (min-width: 1024px) {
-  /* Para pantallas muy grandes */
-  header {
-    padding: var(--espaciado-grande) 0; /* Centra el header */
-  }
-
-  section {
-    padding: var(--espaciado-grande) var(--espaciado-grande);
-  }
-}
-
-/* --- Clases de Utilidad (para escalabilidad) --- */
-
-/* Clase para centrar cualquier elemento de bloque */
 .text-center {
   text-align: center;
 }
 
-/* Clase para ocultar elementos visualmente pero mantenerlos para lectores de pantalla */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -220,44 +150,62 @@ section {
   border: 0;
 }
 
-/* --- Pie de Página (Footer) --- */
 footer {
-  background-color: var(--color-secundario); /* Fondo oscuro como el header */
-  color: var(--color-texto-claro); /* Texto claro para contraste */
-  padding: var(--espaciado-grande) var(--espaciado-medio); /* Relleno generoso */
-  text-align: center; /* Centra el contenido */
-  box-shadow: var(--sombra-suave); /* Sombra suave para profundidad */
-  margin-top: var(--espaciado-grande); /* Espacio superior para separarlo del contenido */
-  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  background-color: var(--color-secundario);
+  color: var(--color-texto-claro);
+  padding: var(--espaciado-grande) var(--espaciado-medio);
+  text-align: center;
+  box-shadow: var(--sombra-suave);
+  margin-top: var(--espaciado-grande);
+  width: 100%;
 }
 
-/* Estilos específicos para los elementos dentro del footer */
 footer h2 {
-  color: var(--color-texto-claro); /* Título del footer en color claro */
-  margin-bottom: var(--espaciado-pequeno); /* Espaciado debajo del título */
+  color: var(--color-texto-claro);
+  margin-bottom: var(--espaciado-pequeno);
 }
 
 footer p {
-  font-size: 1.1em; /* Tamaño de fuente ligeramente más grande para los párrafos */
-  margin-bottom: var(--espaciado-pequeno); /* Reduce el margen inferior para los párrafos de contacto */
+  font-size: 1.1em;
+  margin-bottom: var(--espaciado-pequeno);
 }
 
 footer a {
-  color: var(--color-primario); /* Enlaces con el color primario */
-  font-weight: bold; /* Texto de enlace en negrita */
+  color: var(--color-primario);
+  font-weight: bold;
 }
 
 footer a:hover {
-  color: var(--color-acento); /* Color de acento al pasar el ratón */
-  text-decoration: underline; /* Subrayado al pasar el ratón */
+  color: var(--color-acento);
+  text-decoration: underline;
 }
 
 footer #contacto {
-  max-width: 960px; /* Limita el ancho del contenido interno del footer */
+  max-width: 960px;
   margin-left: auto;
-  margin-right: auto; /* Centra la sección interna */
-  padding: 0; /* Elimina padding adicional que podría tener section */
-  background: none; /* Elimina el fondo de la sección si el footer ya lo provee */
-  box-shadow: none; /* Elimina la sombra de la sección */
-  border-radius: 0; /* Elimina los bordes redondeados */
+  margin-right: auto;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: var(--espaciado-grande);
+  }
+
+  #proyectos {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  header {
+    padding: var(--espaciado-grande) 0;
+  }
+
+  section {
+    padding: var(--espaciado-grande) var(--espaciado-grande);
+  }
 }
